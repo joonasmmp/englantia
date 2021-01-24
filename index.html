@@ -1,0 +1,169 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Englannin tehtäviä</title>
+</head>
+<body>
+    <div class="grid">
+        <div id="quiz">
+		
+	<a href="seiska.html"><button id="seiska">7. lk</button></a>
+        <a href="kasi.html"><button id="kasi">8. lk</button></a>
+        <a href="ysi.html"><button id="ysi">9. lk</button></a>
+		
+		
+    <h1>
+   <label id="lblGreetings"></label>
+    </h1>
+    <hr style="height:1px;width:390px;color:black;background-color:gray">
+		<br>
+    
+    Täältä löytyy tehtäviä ja niin edelleen.
+    <p>
+    Ehkä joskus jotain muutakin.
+    </p>
+    
+ <style>   
+	#modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+}
+
+
+body {
+  padding: 20px;
+  font-family: 'Times New Roman', serif;
+  text-align: center;
+}
+
+.grid #question {
+    font-family: 'Times New Roman', serif;
+    font-size: 30px;
+    color: #000000;
+    
+    }
+
+.grid h1 {
+  font-size: 20px;
+  font-family: 'Times New Roman', serif;
+  color: #000000;
+}
+
+button {
+  color: white;
+  width: 200px;
+  height: 25px;
+  margin-top: 40px;
+  line-height: 80px;
+  font-weight: bold;
+  font-size: 15px;
+  background: #eb5615;
+  padding: 0px;
+  border: none;
+  border-radius: 3px;
+}
+
+#btn0, #btn1, #btn2, #btn3 {
+  color: white;
+  border: 1px solid #000000;
+}
+
+#seiska {
+  color: white;
+  width: 100px;
+  background: #eb5615;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+#kasi {
+  color: white;
+  width: 100px;
+  background: #00abc3;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+#ysi {
+  color: white;
+  width: 100px;
+  background: #ea0083;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+#resetbutton{
+  background: white;
+}
+
+#resetbutton2{
+  background: white;
+}
+</style>
+        
+  </div>
+  </div>
+  </body>
+</html>
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<div class="modal fade" id="modal" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Oh dear!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Väärä vastaus</p>
+        <p>"Has" jos yksikön kolmas (hän, se). Muuten aina "have".</p>
+        <p>
+      Kokeile uudestaan.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button id="resetbutton2" class="reset" value="reset">Takaisin alkuun</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+    var myDate = new Date();
+    var hrs = myDate.getHours();
+
+    var greet;
+
+    if (hrs >= 6 && hrs <= 9 )
+        greet = 'Hyvää huomenta!';
+    else if (hrs >= 9 && hrs <= 11)
+        greet = 'Hyvää aamupäivää';
+    else if (hrs >= 11 && hrs <= 13)
+        greet = 'Hyvää päivää';
+		else if (hrs >= 13 && hrs <= 16)
+        greet = 'Hyvää iltapäivää';
+    else if (hrs >= 16 && hrs <= 22)
+        greet = 'Hyvää iltaa';
+		else if (hrs >= 22 && hrs <= 03)
+        greet = 'Hyvää yötä';
+		else if (hrs >= 03 && hrs <= 06)
+        greet = 'Hyvää aamuyötä';
+
+    document.getElementById('lblGreetings').innerHTML =
+        '<b>' + greet + '</b> ja tervetuloa!';
+</script>
