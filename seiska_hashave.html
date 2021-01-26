@@ -15,8 +15,8 @@
 		
     <h1>
     Perfekti: have vai has?
-    </h1>
-    <hr style="height:1px;width:360px;color:black;background-color:gray">
+    </h1> 
+    <hr style="height:1px;width:390px;color:black;background-color:gray">
  
             <p id="question"></p>
  
@@ -31,7 +31,7 @@
       </div>
     </div>
     
-            <hr style="height:1px;width:360px;color:black;background-color:gray">
+            <hr style="height:1px;width:390px;color:black;background-color:gray">
 
         <button id="resetbutton" class="reset" value="reset">Takaisin alkuun</button>
         
@@ -171,7 +171,6 @@ Quiz.prototype.guess = function(answer) {
     this.score++;
   } else {
     $("#modal").modal("show")
-	sleep(2000);
 
   }
 
@@ -261,7 +260,7 @@ var questions = [
 	new Question("_____ you already passed the English test?", ["have", "has"], "have"),
 	new Question("I _____ failed it three times already.", ["have", "has"], "have"),
 	new Question("Billy ____ passed it either.", ["haven't", "hasn't"], "hasn't"),
-	new Question("John and Michael ____ been even failed the 7th grade because of the test.", ["have", "has"], "have"),
+	new Question("John and Michael ____ even failed the 7th grade because of the test.", ["have", "has"], "have"),
 	new Question("_____ you done your homework?", ["haven't", "hasn't"], "haven't"),
 	new Question("I _____ done my homework every day.", ["have", "has"], "have"),
 	new Question("The teacher _____ also given me extra lessons after school.", ["have", "has"], "has"),
