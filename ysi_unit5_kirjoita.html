@@ -1,0 +1,182 @@
+<html>
+ <body>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>Englannin tehtäviä</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+    <div class="grid">
+      <div id="quiz">
+
+        <a href="seiska.html"><button id="seiska">7. lk</button></a>
+        <a href="kasi.html"><button id="kasi">8. lk</button></a>
+        <a href="ysi.html"><button id="ysi">9. lk</button></a>
+        <h1>
+          Täytä tyhjät kohdat
+        </h1>
+        <hr style="height:1px;width:360px;color:black;background-color:gray">
+
+
+      </div>
+    </div>
+
+
+<form>
+  <ol>
+    <li>Many people are worried about <input id="q1" type="text"/> (ilmastonmuutos) and others about the planet running out of <input id="q2" type="text"/> (luonnonvarat). The <input id="q3" type="text" /> (väestö) of the planet is rising dramatically, leading to increasing <input id="q4" type="text"/> (saastuminen). Animals no longer thrive <input id="q5" type="text"/> (luonnossa) and relocate to <input id="q6" type="text"/> (kaupunkiympäristöihin). We already know how to <input id="q7" type="text"/> (kohdata) the problems, but talking about how important it is to <input id="q8" type="text"/> (suojella) the nature and use only <input id="q9" type="text"/> (uusiutuva) energy is not going to help any <input id="q10" type="text"/> (uhanalainen) animals trying to survive. 
+    </li>
+  </ol>
+  
+ 
+  <input type="submit" id="submit" value="Tarkista vastaukset" />
+</form>
+
+<hr style="height:1px;width:360px;color:black;background-color:gray">
+   
+  </body>
+</html>
+
+<p></p>  
+<a href="index.html">Palaa etusivulle</a>
+
+<style>
+li {
+display: inline;
+align-content: center;
+}
+
+ol {
+list-style: none;
+padding-left: 10px;
+}
+
+input {
+    width: 88px;
+    font-size: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 0px 1px 1px 1px;
+}
+
+.oikein input[type=text] {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #299617;
+    background-image: url('https://joonasmmp.github.io/englantia/correct.jpg');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+  
+.vaarin input[type=text] {
+    outline: none;
+    border: none;
+    border-bottom: 2px dashed #DA2C43;
+    padding: 0px;
+}
+
+body {
+  padding: 20px;
+  font-family: 'Times New Roman', serif;
+  text-align: center;
+}
+    
+#submit {
+  border: 0px;
+  background-color: white;
+  width: 150px;
+  font-family: 'Times New Roman', serif;
+  font-size: 12px;
+  margin-left: 105px;
+}
+
+.grid h1 {
+  font-size: 20px;
+  font-family: 'Times New Roman', serif;
+  color: #eb5615;
+  font-weight: normal;
+}
+
+.grid #vastauspainike {
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+#seiska {
+  color: white;
+  width: 100px;
+  font-size: 14px;
+  background: #eb5615;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+#kasi {
+  color: white;
+  width: 100px;
+  font-size: 14px;
+  background: #00abc3;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+#ysi {
+  color: white;
+  width: 100px;
+  font-size: 14px;
+  background: #ea0083;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+
+form {
+  text-align: justify;
+  font-size: 12px;
+  font-family: 'Times New Roman', serif;
+  line-height: 2;
+  max-width: 360px;
+  margin: auto;
+  word-wrap: break-word;
+}
+
+#resetbutton {
+  background: white;
+  border: 0px;
+}</style>
+
+<script>
+var answers = {
+  "q1": ["climate change"],
+  "q2": ["natural resources"],
+	"q3": ["population"],
+  "q4": ["pollution"],
+  "q5": ["in nature"],
+  "q6": ["urban environments", "urban environment"],
+  "q7": ["face"],
+  "q8": ["protect"],
+  "q9": ["renewable"],
+  "q10": ["endangered"],
+};
+
+function markAnswers() {
+  $("input[type='text']").each(function() {
+    console.log($.inArray(this.value, answers[this.id]));
+    if ($.inArray(this.value, answers[this.id]) === -1) {
+      $(this).parent()[0].setAttribute("class", "vaarin");
+    } else {
+      $(this).parent()[0].setAttribute("class", "oikein");
+    }
+  })
+}
+
+$("form").on("submit", function(e) {
+  e.preventDefault();
+  markAnswers();
+});
+</script>
