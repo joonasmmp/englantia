@@ -24,8 +24,7 @@
   </body>
 </html>
 
-<div class="grid">
-<div id="kysymykset">
+
 <form>
   <ol>
     <li>He <input id="q1" type="text" /> like football.</li>
@@ -33,17 +32,9 @@
   </ol>
   <input type="submit" id="submit" value="Tarkista" />
 </form>
-</div>
-</div>
 <br>
 
 <hr style="height:1px;width:360px;color:black;background-color:gray">
-
-<div class="grid">
-<div id="submitnappula">
-<button id="resetbutton" class="reset" value="reset">Takaisin alkuun</button>
-</div>
-</div>
 
 <style>
 li {
@@ -161,5 +152,5 @@ function markAnswers(){
 $("form").on("submit", function(e){
     e.preventDefault();
     markAnswers();
-}); 
+});
 </script>
