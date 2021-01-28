@@ -1,3 +1,27 @@
+<html>
+ <body>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>Englannin tehtäviä</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+ 
+    <div class="grid">
+      <div id="quiz">
+
+        <a href="seiska.html"><button id="seiska">7. lk</button></a>
+        <a href="kasi.html"><button id="kasi">8. lk</button></a>
+        <a href="ysi.html"><button id="ysi">9. lk</button></a>
+        <h1>
+          Täytä tyhjät kohdat
+        </h1>
+        <hr style="height:1px;width:360px;color:black;background-color:gray">
+
+
+      </div>
+    </div>
+
 <form>
   <ol>
     <li>He <input id="q1" type="text" /> like football.</li>
@@ -8,6 +32,31 @@
 <br>
 
 <hr style="height:1px;width:360px;color:black;background-color:gray">
+
+   <script>
+var answers = {
+    "q1": ["doesn't", "does not"],
+    "q2": ["hasn't", "has not"]
+};
+
+function markAnswers(){
+    $("input[type='text']").each(function(){
+        console.log($.inArray(this.value, answers[this.id]));
+        if($.inArray(this.value, answers[this.id]) === -1){
+            $(this).parent()[0].setAttribute("class", "vaarin");
+        } else {
+            $(this).parent()[0].setAttribute("class", "oikein");
+        }
+    })
+}
+    
+$("form").on("submit", function(e){
+    e.preventDefault();
+    markAnswers();
+});</script>
+   
+  </body>
+</html>
 
 <style>
 li {
@@ -105,27 +154,3 @@ body {
   border: 0px;
 }</style>
 
-<script>
-
-var answers = {
-    "q1": ["doesn't", "does not"],
-    "q2": ["hasn't", "has not"]
-};
-
-function markAnswers(){
-    $("input[type='text']").each(function(){
-        console.log($.inArray(this.value, answers[this.id]));
-        if($.inArray(this.value, answers[this.id]) === -1){
-            $(this).parent()[0].setAttribute("class", "vaarin");
-        } else {
-            $(this).parent()[0].setAttribute("class", "oikein");
-        }
-    })
-}
-    
-$("form").on("submit", function(e){
-    e.preventDefault();
-    markAnswers();
-}); 
-
-</script>
