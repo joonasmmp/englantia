@@ -1,36 +1,9 @@
-<html>
- <body>
-  <head lang="en">
-    <meta charset="UTF-8">
-    <title>Englannin tehtäviä</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-
- 
-    <div class="grid">
-      <div id="quiz">
-
-        <a href="seiska.html"><button id="seiska">7. lk</button></a>
-        <a href="kasi.html"><button id="kasi">8. lk</button></a>
-        <a href="ysi.html"><button id="ysi">9. lk</button></a>
-        <h1>
-          Täytä tyhjät kohdat
-        </h1>
-        <hr style="height:1px;width:360px;color:black;background-color:gray">
-
-
-      </div>
-    </div>
-  </body>
-</html>
-
-
 <form>
   <ol>
     <li>He <input id="q1" type="text" /> like football.</li>
     <li>He doesn't give or take or anything <input id="q2" type="text" /> got any money.</li> Mate for fucks sake <li> What or </li>
   </ol>
-  <input type="submit" id="submit" value="Tarkista" />
+  <input type="submit" id="submit" value="Result" />
 </form>
 <br>
 
@@ -133,6 +106,7 @@ body {
 }</style>
 
 <script>
+
 var answers = {
     "q1": ["doesn't", "does not"],
     "q2": ["hasn't", "has not"]
@@ -152,5 +126,6 @@ function markAnswers(){
 $("form").on("submit", function(e){
     e.preventDefault();
     markAnswers();
-});
+}); 
+
 </script>
