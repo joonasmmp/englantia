@@ -1,0 +1,201 @@
+<html>
+ <body>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>Englannin tehtäviä</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+    <div class="grid">
+      <div id="quiz">
+
+        <a href="seiska.html"><button id="seiska">7. lk</button></a>
+        <a href="kasi.html"><button id="kasi">8. lk</button></a>
+        <a href="ysi.html"><button id="ysi">9. lk</button></a>
+        <h1>
+          Täytä tyhjät kohdat
+        </h1>
+        <hr style="height:1px;width:360px;color:black;background-color:gray">
+
+
+      </div>
+    </div>
+
+
+<form autocomplete="off">
+  <ol>
+    John was not an <li><input id="q1" type="text"/></li> (asiantuntija) when it comes to buses. 
+	First, he <li><input id="q2" type="text"/></li> (myöhästyi bussista) to Auckland. 
+	When he finally <li><input id="q3" type="text" /></li> (ehtiä) to the next bus, he was so <li><input id="q4" type="text"/></li> (uupunut), he accidentally stepped on the bus to Christchurch instead. 
+	After the first stop, he still <li><input id="q5" type="text"/></li> (oli mahdollisuus) to step out of the bus and return to where it all started. 
+	If he wanted to <li><input id="q6" type="text"/></li> (ehtiä) Auckland <li><input id="q7" type="text"/></li> (ajallaan),
+	he would have to jump out of the bus and <li><input id="q8" type="text"/></li> (välittömästi) run to another.
+	But then he spent <li><input id="q9" type="text"/></li> (pari, muutama) minutes to think of an alternative plan.
+	He had always wanted to <li><input id="q10" type="text"/></li> (katsoa, tsekata) what Christchuch had to offer. 
+	Besides, the bus <li><input id="q11" type="text"/></li> (asema) of Christchuch close to the port, where he could  board a <li><input id="q12" type="text"/></li> (lautta) to Auckland later this evening.
+	Getting a <li><input id="q12" type="text"/></li> (lento) to Auckland was also an option, but a difficult one because of his <li><input id="q13" type="text"/></li> (matkatavat).
+	Getting all these items through the <li><input id="q14" type="text"/></li> (turvatarkastus) was close to impossible, but John was <li><input id="q15" type="text"/></li> (optimistinen).
+	The problem was, however, that after buying all these extra <li><input id="q15" type="text"/></li> (matkaliput) he would have no money to get back home.
+  </ol>
+  
+ 
+  <input type="submit" id="submit" value="Tarkista vastaukset" />
+</form>
+
+<hr style="height:1px;width:360px;color:black;background-color:gray">
+   
+  </body>
+</html>
+
+<p></p>  
+<a href="index.html">Palaa etusivulle</a>
+
+<style>
+li {
+display: inline;
+align-content: center;
+}
+
+ol {
+list-style: none;
+padding-left: 10px;
+}
+
+input {
+    width: 88px;
+    font-size: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 0px 1px 1px 1px;
+}
+
+.oikein input[type=text] {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #299617;
+    background-image: url('https://joonasmmp.github.io/englantia/correct.jpg');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: right;
+	padding: 0px;
+  }
+  
+.vaarin input[type=text] {
+    outline: none;
+    border: none;
+    border-bottom: 2px dashed #DA2C43;
+    padding: 0px;
+}
+
+body {
+  padding: 20px;
+  font-family: 'Times New Roman', serif;
+  text-align: center;
+}
+    
+#submit {
+  border: 0px;
+  background-color: white;
+  width: 150px;
+  font-family: 'Times New Roman', serif;
+  font-size: 12px;
+  margin-left: 105px;
+}
+
+.grid h1 {
+  font-size: 20px;
+  font-family: 'Times New Roman', serif;
+  color: #00abc3;
+  font-weight: normal;
+}
+
+.grid #vastauspainike {
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+#seiska {
+  color: white;
+  width: 100px;
+  font-size: 14px;
+  background: #eb5615;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+#kasi {
+  color: white;
+  width: 100px;
+  font-size: 14px;
+  background: #00abc3;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+#ysi {
+  color: white;
+  width: 100px;
+  font-size: 14px;
+  background: #ea0083;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+
+form {
+  text-align: justify;
+  font-size: 12px;
+  font-family: 'Times New Roman', serif;
+  line-height: 2;
+  max-width: 360px;
+  margin: auto;
+  word-wrap: break-word;
+}
+
+#resetbutton {
+  background: white;
+  border: 0px;
+}</style>
+
+<script>
+var answers = {
+  "q1": ["expert"],
+  "q2": ["missed the bus"],
+	"q3": ["made it"],
+  "q5": ["exhausted"],
+  "q4": ["had a chance"],
+  "q6": ["make it"],
+  "q7": ["on time"],
+  "q8": ["immediately"],
+  "q9": ["a couple of"],
+  "q10": ["check out"],
+  "q11: ["station"],
+  "q12": ["ferry"],
+  "q13": ["flight"],
+  "q14": ["luggage", "baggage"],
+  "q15": ["security check"],
+  "q16": ["optimistic"],
+  "q17": ["tickets"],
+};
+
+function markAnswers() {
+  $("input[type='text']").each(function() {
+    console.log($.inArray(this.value, answers[this.id]));
+    if ($.inArray(this.value, answers[this.id]) === -1) {
+      $(this).parent()[0].setAttribute("class", "vaarin");
+    } else {
+      $(this).parent()[0].setAttribute("class", "oikein");
+    }
+  })
+}
+
+$("form").on("submit", function(e) {
+  e.preventDefault();
+  markAnswers();
+});
+</script>
