@@ -1,6 +1,7 @@
 <html>
  <body>
- <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	 <meta charset="UTF-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <head lang="en">
@@ -8,6 +9,7 @@
     <title>Englannin tehtäviä</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
+
 
     <div class="grid">
       <div id="quiz">
@@ -20,10 +22,8 @@
         </h1>
         <hr style="height:1px;width:360px;color:black;background-color:gray">
 
-
-      </div>
+         </div>
     </div>
-
 
 <form autocomplete="off">
   <ol>
@@ -109,7 +109,7 @@ body {
 .grid h1 {
   font-size: 20px;
   font-family: 'Times New Roman', serif;
-  color: #00abc3;
+  color: #eb5615;
   font-weight: normal;
 }
 
@@ -186,7 +186,7 @@ var answers = {
 function markAnswers() {
   $("input[type='text']").each(function() {
     console.log($.inArray(this.value, answers[this.id]));
-    if ($.inArray(this.value, answers[this.id]) === -1) {
+    if ($.inArray(this.value.toLowerCase().trim(), answers[this.id]) === -1) {
       $(this).parent()[0].setAttribute("class", "vaarin");
     } else {
       $(this).parent()[0].setAttribute("class", "oikein");
