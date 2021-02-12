@@ -6,23 +6,21 @@
 </head>
 <body>
 
-	<div class="grid">
-	<div id="alkupalkki">
+	<div class="grid"
+	<div id="alkupalkki"
 		
 	<a href="seiska.html"><button id="seiska">7. lk</button></a>
         <a href="kasi.html"><button id="kasi">8. lk</button></a>
         <a href="ysi.html"><button id="ysi">9. lk</button></a>
-		   
-       </div>
-       </div>
-       
-       <div class="grid">
-        <div id="quiz">
+	    </div>
+		
+		<div class="grid">
+        <div id="quiz">	
 		
     <h1>
     go / to go / going
     </h1>
-    <hr style="height:1px;width:390px;color:black;background-color:gray">
+    <hr style="height:1px;width:360px;color:black;background-color:gray">
  
             <p id="question"></p>
  
@@ -37,48 +35,16 @@
 
 
       </div>
+    </div>
     
-            <hr style="height:1px;width:390px;color:black;background-color:gray">
+            <hr style="height:1px;width:360px;color:black;background-color:gray">
 
         <button id="resetbutton" class="reset" value="reset">Takaisin alkuun</button>
-        </div> 
         
-  </body>
-
-</html>
-
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-
-<div class="modal fade" id="modal" role="dialog">
-  <div class="modal-dialog">
-
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Oh dear!</h4>
-      </div>
-      <div class="modal-body">
-        <p>Väärä vastaus</p>
-        <p>"Has" jos yksikön kolmas (hän, se). Muuten aina "have".</p>
-        <p>
-      Kokeile uudestaan.
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button id="resetbutton2" class="reset" value="reset">Takaisin alkuun</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<style>
-  #modal {
+        <style>
+		
+		
+	#modal {
   display: none;
   position: absolute;
   top: 0;
@@ -90,12 +56,41 @@
 }
 
 
-
-
 body {
   padding: 20px;
   font-family: 'Times New Roman', serif;
   text-align: center;
+}
+
+.grid #question {
+    font-family: 'Times New Roman', serif;
+    font-size: 22px;
+    color: #000000;
+    
+    }
+
+.grid h1 {
+  font-size: 20px;
+  font-family: 'Times New Roman', serif;
+  color: #00abc3;
+}
+
+.grid button {
+  color: white;
+  width: 125px;
+  font-size: 18px;
+  font-family: 'Times New Roman', serif;
+  background: #00abc3;
+  margin-top: 4px;
+  padding: 0px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+#btn0, #btn1, #btn2, #btn3 {
+  width: 75 px;
+  color: white;
+  border: 1px solid #000000;
 }
 
 #seiska {
@@ -125,47 +120,6 @@ body {
   border-radius: 3px;
 }
 
-.grid #question {
-    font-family: 'Times New Roman', serif;
-    font-size: 22px;
-    color: #000000;
-    
-    }
-
-.grid h1 {
-  font-size: 20px;
-  font-family: 'Times New Roman', serif;
-  color: #00abc3;
-}
-
-.grid #alkupalkki button {
-  color: white;
-  width: 100px;
-  font-size: 14px;
-  border: 1px solid #000000;
-  border-radius: 3px;
-}
-
-.grid #quiz button {
-  color: white;
-  width: 125px;
-  font-size: 18px;
-  font-family: 'Times New Roman', serif;
-  background: #00abc3;
-  margin-top: 4px;
-  padding: 0px;
-  border: 1px solid #000000;
-  border-radius: 3px;
-}
-
-#btn0, #btn1, #btn2, #btn3 {
-  width: 75 px;
-  color: white;
-  border: 1px solid #000000;
-}
-
-
-
 #resetbutton{
   background: white;
   border: 0px;
@@ -175,11 +129,44 @@ body {
   background: white;
   border: 0px;
 }
-
 </style>
+        
+  </body>
+
+</html>
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<div class="modal fade" id="modal" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Oh dear!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Väärä vastaus</p>
+        <p>jos verbiä edeltää: (1) apuverbi, (2) let, (3), make, (4) had better, to-partikkeli otetaan pois. Muuten laitetaan to väliin.</p>
+        <p>Verbi muotoon -ing jos (1) prepositioilmaisu, (2) jotkut verbit, (3) jotkut ilmaisut.</p>
+		<p>Lisätietoja s. 112-114 tehtäväkirjasta. Kokeile uudestaan.</p>
+      </div>
+      <div class="modal-footer">
+        <button id="resetbutton2" class="reset" value="reset">Takaisin alkuun</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
-	function Quiz(questions) {
+
+function Quiz(questions) {
   this.score = 0;
   this.questions = questions;
   this.questionIndex = 0;
@@ -194,7 +181,7 @@ Quiz.prototype.guess = function(answer) {
     this.score++;
   } else {
     $("#modal").modal("show")
-		sleep(2000);	
+	sleep(2000);
 
   }
 
@@ -266,29 +253,29 @@ var questions = [
   new Question("Do you feel like _____ downhill skiing with me?", ["go", "to go", "going", "gone" ], "going"),
   new Question("Sorry, I can't _____ tonight.", ["come", "to come", "coming", "comes"], "come"),
   new Question("I am not allowed _____ the house tonight.", ["leave", "to leave", "leaving", "left" ], "to leave"),
-  new Question("Also, I'm super afraid of downhill _______", ["ski", "to ski", "skiing", "skis" ], "skiing"),
-  new Question("I admit I _____ the speed", ["like", "to like", "liking", "likes" ], "like"),
-  new Question("But it's not worth _____", ["die", "to die", "dying", "died"], "dying"),
-  new Question("You had better _____ careful out there", ["be", "to be", "being", "are" ], "be"),
+  new Question("Also, I'm super afraid of downhill _______.", ["ski", "to ski", "skiing", "skis" ], "skiing"),
+  new Question("I admit _____ speed and danger.", ["like", "to like", "liking", "likes" ], "liking"),
+  new Question("But it's not worth _____ for.", ["die", "to die", "dying", "died"], "dying"),
+  new Question("You had better _____ careful out there.", ["be", "to be", "being", "are" ], "be"),
   new Question("Even if you are good at _____, anything can happen.", ["ski", "to ski", "skiing", "skied" ], "skiing"),
   new Question("And it's hard  _____ a leg or two.", ["not break", "not to break", "not breaking", "not broke" ], "not to break"),
   new Question("Cousin! Let's _____ bowling tonight!", ["go", "to go", "going", "gone" ], "go"),
   new Question("Sorry, I am not able _____ tonight.", ["come", "to come", "coming", "came" ], "to come"),
   new Question("Quit _____ already! I know you can!", ["lie", "to lie", "lying", "lied" ], "lying"),
   new Question("Sorry. I just can't stand _____.", ["bowl", "to bowl", "bowling", "bowled" ], "bowling"),
-  new Question("And you can't make me _____ it.", ["like", "to löike", "liking", "liked" ], "like"),
-  new Question("Would you _____ to do something else, then?", ["like", "to like", "liking", "liked" ], "to like"),
+  new Question("And you can't make me _____ it.", ["like", "to like", "liking", "liked" ], "like"),
+  new Question("Would you _____ to do something else, then?", ["like", "to like", "liking", "liked" ], "like"),
   new Question("Something you can enjoy _____.", ["do", "to do", "doing", "done" ], "doing"),
-	new Question("Should we _____ Frank and see what he's up to?.", ["call", "to call", "calling", "called" ], "call"),
+	new Question("Should we _____ Frank and see what he's up to?", ["call", "to call", "calling", "called" ], "call"),
 	new Question("Sure, I will _____ him straight away.", ["call", "to call", "calling", "called" ], "call"),
 	new Question("Let me _____ him, I haven't spoken to him in weeks.", ["call", "to call", "calling", "called" ], "call"),
-	new Question("Sure, you do what you want _____.", ["do", "to do", "doing", "done" ], "do"),
+	new Question("Sure, you do what you want _____.", ["do", "to do", "doing", "done" ], "to do"),
 	new Question("I don't mind you _____ him.", ["call", "to call", "calling", "called" ], "calling"),
-	new Question("Actually, I'm fed up with _____ people all the time.", ["to have calling", "having to call", "having call", "to have call"], "having to call"),
+	new Question("Actually, I'm fed up with _____ people all the time.", ["to have call", "having to call", "having call", "to have call"], "having to call"),
 	new Question("I'm not really crazy about _____ to people.", ["talk", "to talk", "talking", "talks" ], "talking"),
 	new Question("Especially during class when you are not allowed _____ during teaching.", ["talk", "to talk", "talking", "talked" ], "to talk"),
 	new Question("That way we can keep _____ without interruptions.", ["study", "to study", "studying", "studied" ], "studying"),
-	new Question("But some people just can't help _____ silent.", ["stay", "to stay", "staying", "stayed" ], "staying"),
+	new Question("But some people just can't help _____.", ["talk", "to talk", "talking", "talked" ], "talking"),
 	new Question("But the teacher doesn't mind as long as everyone keeps _____.", ["learn", "to learn", "learning", "learned" ], "learning"),
 	new Question("Do what you have to do to enjoy _____.", ["study", "to study", "studying", "studied" ], "studying"),
 	new Question("But I still won't _____ bowling with you.", ["go", "to go", "going", "goes" ], "go"),
@@ -312,3 +299,6 @@ var quiz = new Quiz(questions);
 // display quiz
 populate();
 </script>
+
+<p></p>  
+<a href="index.html">Palaa etusivulle</a>
