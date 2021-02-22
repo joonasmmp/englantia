@@ -1,0 +1,284 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Englannin tehtäviä</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="grid">
+        <div id="quiz">
+		
+	<a href="seiska.html"><button id="seiska">7. lk</button></a>
+        <a href="kasi.html"><button id="kasi">8. lk</button></a>
+        <a href="ysi.html"><button id="ysi">9. lk</button></a>
+		
+		
+    <h1>
+    Mikä aikamuoto?
+    </h1>
+    <hr style="height:1px;width:360px;color:black;background-color:gray">
+ 
+            <p id="question"></p>
+ 
+            <div class="buttons">
+          <button id="btn0"><span id="choice0"></span></button> 
+          <button id="btn1"><span id="choice1"></span></button>
+		  <p><button id="btn2"><span id="choice2"></span></button> 
+          <button id="btn3"><span id="choice3"></span></button></p>
+        
+        </div>
+
+
+
+      </div>
+    </div>
+    
+            <hr style="height:1px;width:360px;color:black;background-color:gray">
+
+        <button id="resetbutton" class="reset" value="reset">Takaisin alkuun</button>
+        
+        <style>
+		#modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+}
+
+
+body {
+  padding: 20px;
+  font-family: 'Times New Roman', serif;
+  text-align: center;
+}
+
+.grid #question {
+    font-family: 'Times New Roman', serif;
+    font-size: 22px;
+    color: #000000;
+    
+    }
+
+.grid h1 {
+  font-size: 20px;
+  font-family: 'Times New Roman', serif;
+  color: #eb5615;
+}
+
+.grid button {
+  color: white;
+  width: 125px;
+  font-size: 18px;
+  font-family: 'Times New Roman', serif;
+  background: #eb5615;
+  margin-top: 4px;
+  padding: 0px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+#btn0, #btn1, #btn2, #btn3 {
+  width: 75 px;
+  color: white;
+  border: 1px solid #000000;
+}
+
+#seiska {
+  color: white;
+  width: 100px;
+  font-size: 14px;
+  background: #eb5615;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+#kasi {
+  color: white;
+  width: 100px;
+  font-size: 14px;
+  background: #00abc3;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+#ysi {
+  color: white;
+  width: 100px;
+  font-size: 14px;
+  background: #ea0083;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+#resetbutton{
+  background: white;
+  border: 0px;
+}
+
+#resetbutton2{
+  background: white;
+  border: 0px;
+}
+</style>
+        
+  </body>
+
+</html>
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<div class="modal fade" id="modal" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Oh dear!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Väärä vastaus</p>
+        <p>Valitettavasti nämä täytyy vaan opetella. </p>
+		<p>Lisätietoja s. 114-115 tekstikirjasta. Kokeile uudestaan.</p>
+      </div>
+      <div class="modal-footer">
+        <button id="resetbutton2" class="reset" value="reset">Takaisin alkuun</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+function Quiz(questions) {
+  this.score = 0;
+  this.questions = questions;
+  this.questionIndex = 0;
+}
+
+Quiz.prototype.getQuestionIndex = function() {
+  return this.questions[this.questionIndex];
+}
+
+Quiz.prototype.guess = function(answer) {
+  if (this.getQuestionIndex().isCorrectAnswer(answer)) {
+    this.score++;
+  } else {
+    $("#modal").modal("show")
+	sleep(2000);
+
+  }
+
+  this.questionIndex++;
+}
+
+Quiz.prototype.isEnded = function() {
+  return this.questionIndex === this.questions.length;
+}
+
+function startOver() {
+  location.reload(true);
+}
+
+function Question(text, choices, answer) {
+  this.text = text;
+  this.choices = choices;
+  this.answer = answer;
+}
+
+Question.prototype.isCorrectAnswer = function(choice) {
+  return this.answer === choice;
+}
+
+function populate() {
+  if (quiz.isEnded()) {
+    showScores();
+  } else {
+    // show question
+    var element = document.getElementById("question");
+    element.innerHTML = quiz.getQuestionIndex().text;
+
+    // show options
+    var choices = quiz.getQuestionIndex().choices;
+    for (var i = 0; i < choices.length; i++) {
+      var element = document.getElementById("choice" + i);
+      element.innerHTML = choices[i];
+      guess("btn" + i, choices[i]);
+    }
+
+    showProgress();
+  }
+}
+
+function guess(id, guess) {
+  var button = document.getElementById(id);
+  button.onclick = function() {
+    quiz.guess(guess);
+    populate();
+  }
+}
+
+function showProgress() {
+  var currentQuestionNumber = quiz.questionIndex + 1;
+  var element = document.getElementById("progress");
+  element.innerHTML = "Question " + currentQuestionNumber + " of " + quiz.questions.length;
+}
+
+function showScores() {
+  var gameOverHTML = "<h1>Aivan mahtavaa!!</h1>";
+  gameOverHTML += "<h2 id='score'> Sait kaikki " + quiz.score + " kohtaa oikein! </h2>"
+  var element = document.getElementById("quiz");
+  element.innerHTML = gameOverHTML;
+}
+
+// kysymykset tähän
+var questions = [
+  new Question("olen", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "preesens"),
+  new Question("olin",["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "imprefekti"),
+  new Question("olen ollut", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "perfekti"),
+  new Question("decide", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "preesens"),
+  new Question("have decided", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "perfekti"),
+  new Question("doesn't do", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "preesens"),
+  new Question("hasn't seen", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "perfekti"),
+  new Question("eats", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "preesens"),
+  new Question("spoke", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "imperfekti"),
+  new Question("on tuonut", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "perfekti"),
+  new Question("ei ole syönyt", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "perfekti"),
+  new Question("didn't do", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "imperfekti"),
+  new Question("do", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "preesens"),
+  new Question("has done", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "perfekti"),
+  new Question("löi", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "imperfekti"),
+  new Question("lyön", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "preesens"),
+  new Question("olen lyönyt", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "perfekti"),
+	new Question("löitkö?", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "imperfekti"),
+	new Question("en lyönyt", ["preesens", "imperfekti", "perfekti", "pluskvamperfekti"], "imperfekti"),
+  
+];
+
+$('.reset').click(startOver);
+
+$(document).ready(function() {
+  $("#modal").modal({
+    show: false,
+    backdrop: 'static'
+  });
+});
+
+// create quiz
+var quiz = new Quiz(questions);
+
+// display quiz
+populate();
+</script>
+
+<p></p>  
+<a href="index.html">Palaa etusivulle</a>
