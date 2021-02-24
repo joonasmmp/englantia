@@ -1,3 +1,4 @@
+
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -6,18 +7,14 @@
 </head>
 <body>
 
-	<div class="grid">
-	<div id="alkupalkki">
+		<div class="grid">
+        <div id="quiz">	
 		
 	<a href="seiska.html"><button id="seiska">7. lk</button></a>
         <a href="kasi.html"><button id="kasi">8. lk</button></a>
         <a href="ysi.html"><button id="ysi">9. lk</button></a>
-		   
-       </div>
-       </div>
-       
-       <div class="grid">
-        <div id="quiz">
+	    </div>
+
 		
     <h1>
     Unit 5: Suunnistus
@@ -157,8 +154,10 @@
         </div>
         </div>
 		
-		<style>
-				#modal {
+		        <style>
+		
+		
+	#modal {
   display: none;
   position: absolute;
   top: 0;
@@ -169,46 +168,11 @@
   text-align: center;
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-
 
 body {
   padding: 20px;
   font-family: 'Times New Roman', serif;
   text-align: center;
-}
-
-#seiska {
-  color: white;
-  width: 100px;
-  font-size: 14px;
-  background: #eb5615;
-  border: 1px solid #000000;
-  border-radius: 3px;
-}
-
-#kasi {
-  color: white;
-  width: 100px;
-  font-size: 14px;
-  background: #00abc3;
-  border: 1px solid #000000;
-  border-radius: 3px;
-}
-
-#ysi {
-  color: white;
-  width: 100px;
-  font-size: 14px;
-  background: #ea0083;
-  border: 1px solid #000000;
-  border-radius: 3px;
 }
 
 .grid #question {
@@ -224,21 +188,7 @@ body {
   color: #00abc3;
 }
 
-.grid h2 {
-  font-size: 20px;
-  font-family: 'Times New Roman', serif;
-  color: #00abc3;
-}
-
-.grid #alkupalkki button {
-  color: white;
-  width: 100px;
-  font-size: 14px;
-  border: 1px solid #000000;
-  border-radius: 3px;
-}
-
-.grid #quiz button {
+.grid button {
   color: white;
   width: 125px;
   font-size: 18px;
@@ -256,9 +206,34 @@ body {
   border: 1px solid #000000;
 }
 
-#submit{
-  background: white;
-  border: 0px;
+#seiska {
+  margin-top: 0px;
+  color: white;
+  width: 100px;
+  font-size: 14px;
+  background: #eb5615;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+#kasi {
+  margin-top: 0px;
+  color: white;
+  width: 100px;
+  font-size: 14px;
+  background: #00abc3;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+#ysi {
+  margin-top: 0px;
+  color: white;
+  width: 100px;
+  font-size: 14px;
+  background: #ea0083;
+  border: 1px solid #000000;
+  border-radius: 3px;
 }
 
 #resetbutton{
@@ -269,7 +244,15 @@ body {
 #resetbutton2{
   background: white;
   border: 0px;
-}</style>
+}
+				
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
 
 <script>
 window.onload = function() {
