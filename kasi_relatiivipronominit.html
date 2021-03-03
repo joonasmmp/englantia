@@ -198,10 +198,9 @@ function startOver() {
   location.reload(true);
 }
 
-function Question(text, choices, answer, answer) {
+function Question(text, choices, answer) {
   this.text = text;
   this.choices = choices;
-  this.answer = answer;
   this.answer = answer;
 }
 
@@ -252,7 +251,7 @@ function showScores() {
 
 // kysymykset tähän
 var questions = [
-  new Question("I like students _____ don't interrupt teaching.", ["who", "which", "whose", "that"], "that", "who"),
+  new Question("I like students _____ don't interrupt teaching.", ["who", "which", "whose", "that"], ["that", "who"]),
   new Question("A silent class is exactly _____ we need on a Wednesday afternoon.", ["who", "which", "what", "that"], "what"),
   new Question("Are there students in Finland _____ don't like English?", ["who", "which", "whose", "that"], "that", "who"),
   new Question("I know a student _____ parents are from Australia.", ["who", "which", "whose", "that"], "whose"),
